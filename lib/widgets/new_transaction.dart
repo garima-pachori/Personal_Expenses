@@ -1,12 +1,18 @@
 import 'package:flutter/material.dart';
 
-class NewTransaction extends StatelessWidget {
+class NewTransaction extends StatefulWidget {
   final Function addTx;
-  final titleController=TextEditingController();
-  final amountController=TextEditingController();
 
   NewTransaction(this.addTx);
 
+  @override
+  State<NewTransaction> createState() => _NewTransactionState();
+}
+
+class _NewTransactionState extends State<NewTransaction> {
+  final titleController=TextEditingController();
+
+  final amountController=TextEditingController();
 
   void submitData(){
     final enteredTitle=titleController.text;
@@ -16,10 +22,12 @@ class NewTransaction extends StatelessWidget {
     return;
     }
 
-                    addTx(
+                    widget.addTx(
                         enteredTitle,
                         enteredAmount,
                     );
+
+                    Navigator.of(context).pop();
   }
 
   @override
@@ -47,11 +55,30 @@ class NewTransaction extends StatelessWidget {
                       onSubmitted: (_) => submitData(),
                     //onChanged: (val) => amountInput=val,
                   ),
-                  TextButton(
+                  Container(
+                    height: 70,
+                    child: Row(
+                      children: [
+                        Text('No date Chosen!'),
+                        TextButton(
+                          child: Text(
+                            'Choose Date',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold
+                            ),
+                          ),
+                          onPressed: () {},
+                        ),
+                      ],
+                    ),
+                  ),
+                  ElevatedButton(
                     child: Text('Add Transaction'),
                     onPressed: submitData,
-                    style: TextButton.styleFrom(
+                    
+                    style: ElevatedButton.styleFrom(
                        primary: Colors.purple,
+                       onPrimary: Colors.white                     
                     ), // Text Color
                   ),
                ],
