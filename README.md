@@ -1,16 +1,14 @@
-# personal_expenses_app
 
-A new Flutter project.
+# Personal Expenses App
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+•Easy-to-use tool for tracking and managing your personal finances.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+•Whether you are a student, a working professional, this app is a great way to stay on top of your finances and make informed financial decisions.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+## Tech Stack
+
+Flutter & Dart
+
